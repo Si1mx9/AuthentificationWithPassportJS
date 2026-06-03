@@ -1,0 +1,12 @@
+<nav>
+  <a href="/" class="brand">AuthApp</a>
+  <div class="nav-links">
+    <% if (locals.currentUser) { %>
+      <span class="user-greeting">Hi, <strong><%= currentUser.username %></strong></span>
+      <a href="/log-out">Log Out</a>
+    <% } else { %>
+      <a href="/log-in">Log In</a>
+      <a href="/sign-up">Sign Up</a>
+    <% } %>
+  </div>
+</nav>

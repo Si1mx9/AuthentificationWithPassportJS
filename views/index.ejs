@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuthApp</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <%- include('_header') %>
+  <main class="container">
+    <% if (locals.currentUser) { %>
+      <div class="card hero">
+        <h1>Welcome back, <span style="color:#e94560"><%= currentUser.username %></span></h1>
+        <p>You are logged in. Glad to see you again!</p>
+        <a href="/log-out" class="btn btn-danger" style="width:auto;padding:0.75rem 2rem">Log Out</a>
+      </div>
+    <% } else { %>
+      <div class="card hero">
+        <h1>AuthApp</h1>
+        <p>Secure authentication, made simple. Sign up to get started.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="/sign-up" class="btn btn-primary" style="width:auto;padding:0.75rem 2rem">Get Started</a>
+          <a href="/log-in" class="btn btn-secondary" style="width:auto;padding:0.75rem 2rem">Log In</a>
+        </div>
+      </div>
+    <% } %>
+  </main>
+  <%- include('_footer') %>
+</body>
+</html>
